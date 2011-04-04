@@ -1,0 +1,71 @@
+Rails Tutorial
+---------------
+important points
+
+Chapter One
+===========
+
+
+Chapter Two
+===========
+scaffold a user with 2 fields
+explanation of function of going to localhost:3000 in browser
+1. browser requests /users url
+2. router routes /users to the index action of the Users controller
+3. the index action asks the User model to retrieve all the users (Users.all)
+4. User model pulls all the users from the database
+5. model returns list of users to controller
+6. controller captures the users in a @users variable, and passes it to the index view
+7. view uses embedded ruby to render the page as html 
+8. controller passes html to browser.
+
+in the controller we have many actions
+index show new edit , create update destroy
+create update and destroy dont usually render pages
+get - index, show, new, edit
+post - create
+put - update
+delete - destroy
+
+@ variables (instance variables) are automatically accessible by the view
+
+2.3.2
+
+add validations to model
+
+$rails console 
+when server is running, you can do things like
+first_user= User.first # gets first user to variable
+first_user.microposts # gets associated microposts
+exit
+
+:users means a symbol.
+
+Chapter 3
+=========
+Static pages - rails can handle truly static pages, the views can be raw html
+
+Testing
+TDD
+adding an about page - test first
+using rspec
+add autotest rails to project
+$autotest
+runs tests in spec/ when files change
+write some tests
+
+Chapter 4
+=========
+Rails flavoured ruby
+
+Blueprint
+
+got to chapter 5
+
+Chapter 5
+=========
+
+Integration tests- we want to create alias routes like /pages/about => /about
+you cant test this in the controller so you need
+rails g integration_test layout_links
+
